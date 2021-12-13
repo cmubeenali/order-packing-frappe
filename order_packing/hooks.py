@@ -51,7 +51,7 @@ app_license = "MIT"
 # ----------
 
 # automatically create page for each record of this doctype
-# website_generators = ["Web Page"]
+# website_generators = ["Kitchen Utility"]
 
 # Installation
 # ------------
@@ -89,6 +89,7 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 
+# this is dummy
 # doc_events = {
 # 	"*": {
 # 		"on_update": "method",
@@ -96,6 +97,14 @@ app_license = "MIT"
 # 		"on_trash": "method"
 #	}
 # }
+
+doc_events={
+	'Kitchen Utility':{
+		'on_update':'order_packing.order_packing.doctype.kitchen_utility.kitchen_utility.publish_orders_to_kitchen_queue'
+	}
+}
+
+
 
 # Scheduled Tasks
 # ---------------
