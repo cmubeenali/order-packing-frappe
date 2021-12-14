@@ -95,12 +95,12 @@ app_license = "MIT"
 # 		"on_update": "method",
 # 		"on_cancel": "method",
 # 		"on_trash": "method"
-#	}
+#	}e
 # }
 
 doc_events={
-	'Kitchen Utility':{
-		'on_update':'order_packing.order_packing.doctype.kitchen_utility.kitchen_utility.publish_orders_to_kitchen_queue'
+	'Sales Order':{
+		'on_submit':'order_packing.order_packing.doctype.kitchen_utility.kitchen_utility.publish_orders_to_kitchen_queue'
 	}
 }
 
@@ -182,3 +182,6 @@ user_data_fields = [
 # 	"order_packing.auth.validate"
 # ]
 
+sounds = [
+	{"name": "order_notification", "src": "/assets/order_packing/sounds/notification.wav", "volume": 1}	
+]

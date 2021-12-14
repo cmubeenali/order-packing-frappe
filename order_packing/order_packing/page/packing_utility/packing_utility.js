@@ -46,9 +46,9 @@ PackingUtility = Class.extend({
 		}
 		func_fetch_orders();		
 		$(frappe.render_template(body, this)).appendTo(this.page.main);		
-		frappe.socketio.socket.on("new_order", (data) => { 			
-			frappe.utils.play_sound('submit')
+		frappe.socketio.socket.on("new_order", (data) => { 						
 			func_fetch_orders();
+			frappe.utils.play_sound('order_notification')
 		});
 	}
 })
